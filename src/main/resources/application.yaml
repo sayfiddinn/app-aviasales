@@ -1,0 +1,44 @@
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: # google email
+    password: # password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db_name
+    username: # db_username
+    password: # db_password
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+  data:
+    rest:
+      base-path: /api/sw
+      detection-strategy: annotated
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+  sql:
+    init:
+      mode: never
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+command:
+  expire-time: 3600000
+  jwt-key: # any word
+logging:
+  file:
+    name: log/appAvia.log
+  pattern:
+    file: '%d{yyyy-MM-dd HH:mm:ss} %-5level --- [%thread] %logger : %msg%n'
+
+
